@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بريف ينبع | حجز باقات الكورنر</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brief-purple: #71237F;
+            --brief-light: #FDFBF7;
+        }
+
+        body {
+            font-family: 'Alexandria', sans-serif;
+            background-color: var(--brief-light);
+            color: #1a1a1a;
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .luxury-card {
+            background-color: white;
+            border-radius: 2.5rem;
+            padding: 4.5rem 1.5rem;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid rgba(0,0,0,0.01);
+            transition: all 0.4s ease;
+        }
+
+        .luxury-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(113, 35, 127, 0.04);
+        }
+
+        .purple-underline {
+            width: 50px;
+            height: 4px;
+            background-color: var(--brief-purple);
+            margin: 1rem auto;
+            border-radius: 10px;
+        }
+
+        .btn-purple {
+            background-color: var(--brief-purple);
+            color: white;
+            border-radius: 1.5rem;
+            padding: 0.9rem 2.5rem;
+            font-weight: 800;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-purple:hover {
+            opacity: 0.95;
+        }
+
+        .sticky-footer {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            gap: 12px;
+            z-index: 100;
+        }
+
+        .sticky-btn {
+            flex: 1;
+            padding: 14px;
+            border-radius: 1.5rem;
+            font-weight: 800;
+            font-size: 0.85rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 10px 25px rgba(113, 35, 127, 0.12);
+        }
+
+        .hero-title {
+            font-size: clamp(4rem, 15vw, 10rem);
+            font-weight: 900;
+            line-height: 1;
+            color: var(--brief-purple);
+        }
+
+        .highlight-text {
+            color: var(--brief-purple);
+            font-weight: 700;
+        }
+
+        .checkmark {
+            color: var(--brief-purple);
+            font-weight: 900;
+            margin-left: 6px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased text-center pb-32">
+
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md h-24 flex items-center px-6 justify-between border-b border-gray-50">
+        <a href="https://wa.me/966566765782" target="_blank" class="bg-[#71237F] text-white px-5 py-2 rounded-full text-[11px] font-bold flex items-center gap-2 active:scale-95 transition-all">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 0 5.414 0 12.05c0 2.123.553 4.197 1.6 6.037L0 24l6.105-1.603a11.83 11.83 0 005.94 1.577h.005c6.632 0 12.045-5.414 12.045-12.05a11.782 11.782 0 00-3.535-8.414z"/>
+            </svg>
+            تواصل معنا
+        </a>
+        <div class="flex flex-col items-end">
+            <span class="text-3xl font-black text-[#71237F] leading-none">بريف</span>
+            <span class="text-[7px] font-bold text-[#71237F] mt-1 mr-0.5">فرع ينبع</span>
+        </div>
+    </nav>
+
+    <section class="pt-56 pb-20 px-6">
+        <div class="max-w-4xl mx-auto reveal active">
+            <h1 class="hero-title">بريف</h1>
+            <div class="purple-underline"></div>
+            <p class="text-gray-400 font-medium text-xs md:text-sm mt-8 italic">التميز في الضيافة لمناسباتكم في ينبع</p>
+        </div>
+    </section>
+
+    <section class="pb-6 px-6 reveal active">
+        <h2 class="text-3xl font-black text-gray-900">باقات الكورنر</h2>
+        <div class="w-8 h-1 bg-[#71237F]/10 mx-auto mt-4 rounded-full"></div>
+        <p class="text-gray-500 text-sm mt-6 max-w-xl mx-auto leading-7">
+            اختر الباقة المناسبة وسيتم تحويلك مباشرة إلى الواتساب لإرسال طلب الحجز.
+        </p>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 mb-32 text-right">
+        <!-- باقة 100 -->
+        <div class="luxury-card reveal active">
+            <span class="text-[#71237F] font-bold text-sm mb-2 uppercase tracking-widest">باقة 100 كوب</span>
+            <h2 class="text-3xl font-black mb-1 text-gray-950 text-center">650 ر.س</h2>
+            <div class="w-full border-t border-gray-50 pt-8 mt-4 mb-10">
+                <ul class="space-y-4 text-gray-500 font-medium text-[13px]">
+                    <li><span class="checkmark">✓</span> قهوة اليوم</li>
+                    <li><span class="checkmark">✓</span> كركرديه</li>
+                    <li><span class="checkmark">✓</span> تنسيق الركن الخاص</li>
+                </ul>
+            </div>
+            <button onclick="sendPackageToWA('باقة 100 كوب')" class="btn-purple text-center w-full">
+                احجز هذه الباقة
+            </button>
+        </div>
+
+        <!-- باقة 150 -->
+        <div class="luxury-card border border-[#71237F]/10 relative reveal active">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#71237F] text-white px-6 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest">
+                الأكثر طلباً
+            </div>
+            <span class="text-[#71237F] font-bold text-sm mb-2 uppercase tracking-widest">باقة 150 كوب</span>
+            <h2 class="text-3xl font-black mb-1 text-gray-950 text-center">950 ر.س</h2>
+            <div class="w-full border-t border-gray-50 pt-8 mt-4 mb-10">
+                <ul class="space-y-4 text-gray-500 font-medium text-[13px]">
+                    <li><span class="checkmark">✓</span> قهوة اليوم</li>
+                    <li><span class="checkmark">✓</span> كركرديه</li>
+                    <li><span class="checkmark">✓</span> ايس تي</li>
+                    <li><span class="checkmark">✓</span> تنسيق ركن فاخر</li>
+                </ul>
+            </div>
+            <button onclick="sendPackageToWA('باقة 150 كوب')" class="btn-purple text-center w-full">
+                احجز هذه الباقة
+            </button>
+        </div>
+
+        <!-- باقة 200 -->
+        <div class="luxury-card reveal active">
+            <span class="text-[#71237F] font-bold text-sm mb-2 uppercase tracking-widest">باقة 200 كوب</span>
+            <h2 class="text-3xl font-black mb-1 text-gray-950 text-center">1,400 ر.س</h2>
+            <div class="w-full border-t border-gray-50 pt-8 mt-4 mb-10">
+                <ul class="space-y-4 text-gray-500 font-medium text-[13px]">
+                    <li><span class="checkmark">✓</span> قهوة اليوم</li>
+                    <li><span class="checkmark">✓</span> كركرديه</li>
+                    <li><span class="checkmark">✓</span> ايس تي</li>
+                    <li class="highlight-text"><span class="checkmark">✓</span> موظفة تقديم</li>
+                    <li><span class="checkmark">✓</span> تنسيق ركن ملكي</li>
+                </ul>
+            </div>
+            <button onclick="sendPackageToWA('باقة 200 كوب')" class="btn-purple text-center w-full">
+                احجز هذه الباقة
+            </button>
+        </div>
+    </section>
+
+    <div class="sticky-footer md:hidden">
+        <a href="https://wa.me/966566765782" target="_blank" class="sticky-btn bg-white border border-[#71237F] text-[#71237F] active:scale-95 transition-all">
+            واتساب
+        </a>
+        <a href="https://wa.me/966566765782" target="_blank" class="sticky-btn bg-[#71237F] text-white active:scale-95 transition-all">
+            تواصل الآن
+        </a>
+    </div>
+
+    <script>
+        function sendPackageToWA(pkg) {
+            let details = 'قهوة اليوم، كركرديه';
+
+            if (pkg.includes('150')) {
+                details = 'قهوة اليوم، كركرديه، ايس تي';
+            }
+
+            if (pkg.includes('200')) {
+                details = 'قهوة اليوم، كركرديه، ايس تي + موظفة تقديم';
+            }
+
+            const msg = `أهلاً بريف ينبع، أرغب بحجز ${pkg}
+القائمة: ${details}`;
+
+            const waUrl = `https://wa.me/966566765782?text=${encodeURIComponent(msg)}`;
+            window.location.href = waUrl;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
